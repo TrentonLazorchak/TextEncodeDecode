@@ -17,7 +17,8 @@ class CaeserFrame extends JFrame {
         setLayout(new GridBagLayout());
         GridBagConstraints gc = new GridBagConstraints();
 
-        final String inputDefault = "<Enter Text>";
+        final String inputDefault = "<Enter Text to Encode>";
+        final String inputDecodeDefault = "<Enter Text to Decode>";
         final String encodedMsgDefault = "<Encoded Message>";
         final String decodedMsgDefault = "<Decoded Message>";
 
@@ -92,7 +93,7 @@ class CaeserFrame extends JFrame {
         });
         decodeMessage.setWrapStyleWord(true);
         decodeMessage.setLineWrap(true);
-        decodeMessage.setText(inputDefault);
+        decodeMessage.setText(inputDecodeDefault);
 
         JScrollPane decodeScrollPane = new JScrollPane(decodeMessage);
         Dimension decodeScrollSize = new Dimension(500, 25);
@@ -118,7 +119,7 @@ class CaeserFrame extends JFrame {
         decodedMessage.setEditable(false);
         decodedMessage.setWrapStyleWord(true);
         decodedMessage.setLineWrap(true);
-        decodedMessage.setText(encodedMsgDefault);
+        decodedMessage.setText(decodedMsgDefault);
 
         JScrollPane decodedScrollPane = new JScrollPane(decodedMessage);
         Dimension decodedScrollSize = new Dimension(500, 25);
