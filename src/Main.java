@@ -8,11 +8,11 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                JFrame encode = new EncodeFrame("ImageEncoder");
-                encode.setResizable(false);
-                encode.setExtendedState(JFrame.MAXIMIZED_BOTH);
-                encode.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                encode.setVisible(true);
+                JFrame caeserFrame = new CaeserFrame("CaeserCipher");
+                caeserFrame.setResizable(false);
+                caeserFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+                caeserFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                caeserFrame.setVisible(true);
             }
         });
 
