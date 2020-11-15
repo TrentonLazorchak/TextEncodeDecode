@@ -31,10 +31,10 @@ class CaeserFrame extends JFrame {
         //Dimension titleSize = new Dimension(2000,250);
 
         // create Swing components
-        JLabel enterTextLbl = new JLabel("Enter Text to Encode");
+        JLabel enterTextLbl = new JLabel("Enter Text to Encode", SwingConstants.CENTER);
         enterTextLbl.setFont(titleFont);
 
-        JLabel enterTextDecodeLbl = new JLabel("Enter Text to Decode");
+        JLabel enterTextDecodeLbl = new JLabel("Enter Text to Decode", SwingConstants.CENTER);
         enterTextDecodeLbl.setFont(titleFont);
 
         JButton encode = new JButton("Encode");
@@ -261,7 +261,7 @@ class CaeserFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Encode Text and put the encoded string in the decode textbox
-                String decodedMsg = Caeser.decryptCipher(decodeMessage.getText(), (int)key.getValue());
+                String decodedMsg = Caeser.decryptCipher(decodeMessage.getText(), (int)decodeKey.getValue());
                 decodedMessage.setText(decodedMsg);
             }
         });
