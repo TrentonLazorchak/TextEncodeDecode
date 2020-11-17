@@ -18,6 +18,7 @@ class EncodeFrame extends JFrame {
         GridBagConstraints gc = new GridBagConstraints();
 
         final String inputDefault = "<Input Text>";
+        final String encodedMsgDefault = "<Encoded Message Result>";
 
         // fonts
         Font titleFont = new Font("Times New Roman",Font.PLAIN,50);
@@ -86,6 +87,7 @@ class EncodeFrame extends JFrame {
         encodedMessage.setWrapStyleWord(true);
         encodedMessage.setLineWrap(true);
         encodedMessage.setForeground(Color.RED);
+        encodedMessage.setText(encodedMsgDefault);
 
         JScrollPane encodedScrollPane = new JScrollPane(encodedMessage);
         Dimension encodedScrollSize = new Dimension(500, 25);

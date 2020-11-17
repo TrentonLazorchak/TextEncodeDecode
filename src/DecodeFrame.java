@@ -18,6 +18,7 @@ class DecodeFrame extends JFrame {
         GridBagConstraints gc = new GridBagConstraints();
 
         final String inputDefault = "<Input Text>";
+        final String decodedMsgDefault = "<Decoded Message Result>";
 
         // fonts
         Font titleFont = new Font("Times New Roman",Font.PLAIN,50);
@@ -28,7 +29,7 @@ class DecodeFrame extends JFrame {
         //Dimension titleSize = new Dimension(2000,250);
 
         // create Swing components
-        JLabel enterTextLbl = new JLabel("ENTER TEXT TO BE ENCODED", SwingConstants.CENTER);
+        JLabel enterTextLbl = new JLabel("ENTER TEXT TO BE DECODED", SwingConstants.CENTER);
         enterTextLbl.setFont(titleFont);
 
         JLabel decodedMsgLbl = new JLabel("DECODED MESSAGE");
@@ -86,6 +87,7 @@ class DecodeFrame extends JFrame {
         decodedMessage.setWrapStyleWord(true);
         decodedMessage.setLineWrap(true);
         decodedMessage.setForeground(Color.RED);
+        decodedMessage.setText(decodedMsgDefault);
 
         JScrollPane decodedScrollPane = new JScrollPane(decodedMessage);
         Dimension decodedScrollSize = new Dimension(500, 25);
