@@ -21,39 +21,40 @@ class EncodeFrame extends JFrame {
         final String encodedMsgDefault = "<Encoded Message Result>";
 
         // fonts
-        Font titleFont = new Font("Times New Roman",Font.PLAIN,50);
-        Font btnFont = new Font("Times New Roman", Font.PLAIN, 20);
-        Font lblFont = new Font("Times New Roman",Font.PLAIN,25);
+        Font btnFont = new Font("Times New Roman", Font.PLAIN, (int)Main.width/70);//20
+        Font lblFont = new Font("Times New Roman",Font.PLAIN,(int)Main.width/64);//25
+
+        //Font titleFont = new Font("Times New Roman", Font.PLAIN, (int)Main.width/18);//100
 
         // sizes
         //Dimension titleSize = new Dimension(2000,250);
 
         // create Swing components
-        JLabel enterTextLbl = new JLabel("ENTER TEXT TO BE ENCODED", SwingConstants.CENTER);
-        enterTextLbl.setFont(titleFont);
+        JLabel enterTextLbl = new JLabel("ENTER TEXT TO BE ENCODED");//, SwingConstants.CENTER);
+        enterTextLbl.setFont(lblFont);
 
         JLabel encodedMsgLbl = new JLabel("ENCODED MESSAGE");
         encodedMsgLbl.setFont(lblFont);
 
         JButton encode = new JButton("ENCODE");
         encode.setFont(btnFont);
-        encode.setPreferredSize(new Dimension(150, 40));
+        encode.setPreferredSize(new Dimension((int)Main.width/11, (int)Main.width/42));//150 40
 
         JButton clearBtn = new JButton("CLEAR");
         clearBtn.setFont(btnFont);
-        clearBtn.setPreferredSize(new Dimension(150, 40));
+        clearBtn.setPreferredSize(new Dimension((int)Main.width/11, (int)Main.width/42));//150 40
 
         JButton copy = new JButton("COPY");
         copy.setFont(btnFont);
-        copy.setPreferredSize(new Dimension(150, 40));
+        copy.setPreferredSize(new Dimension((int)Main.width/11, (int)Main.width/42));//150 40
 
         JButton homeBtn = new JButton("HOME");
         homeBtn.setFont(btnFont);
-        homeBtn.setPreferredSize(new Dimension(150, 40));
+        homeBtn.setPreferredSize(new Dimension((int)Main.width/11, (int)Main.width/42));//150 40
 
         JButton decodeBtn = new JButton("DECODE");
         decodeBtn.setFont(btnFont);
-        decodeBtn.setPreferredSize(new Dimension(150, 40));
+        decodeBtn.setPreferredSize(new Dimension((int)Main.width/11, (int)Main.width/42));//150 40
 
         // encode textarea and scrollpane
         // set max number of characters
@@ -76,7 +77,7 @@ class EncodeFrame extends JFrame {
         inputMessage.grabFocus();
 
         JScrollPane inputScrollPane = new JScrollPane(inputMessage);
-        Dimension inputScrollSize = new Dimension(500, 25);
+        Dimension inputScrollSize = new Dimension((int)Main.width/4, (int)Main.width/64);//500 25
         inputScrollPane.setMinimumSize(inputScrollSize);
         inputScrollPane.setPreferredSize(inputScrollSize);
         inputScrollPane.setMaximumSize(inputScrollSize);
@@ -90,7 +91,7 @@ class EncodeFrame extends JFrame {
         encodedMessage.setText(encodedMsgDefault);
 
         JScrollPane encodedScrollPane = new JScrollPane(encodedMessage);
-        Dimension encodedScrollSize = new Dimension(500, 25);
+        Dimension encodedScrollSize = new Dimension((int)Main.width/4, (int)Main.width/64);//500 25
         encodedScrollPane.setMinimumSize(encodedScrollSize);
         encodedScrollPane.setPreferredSize(encodedScrollSize);
         encodedScrollPane.setMaximumSize(encodedScrollSize);
@@ -106,10 +107,10 @@ class EncodeFrame extends JFrame {
 
         // add Swing components to the gui
         //// Labels /////////////////////////////////////////
-        gc.ipadx = 100;
-        gc.ipady = 100;
+        gc.ipadx = (int)Main.width/18;//100
+        gc.ipady = (int)Main.width/18;//100
 
-        gc.anchor = GridBagConstraints.PAGE_START;
+        gc.anchor = GridBagConstraints.FIRST_LINE_START;
         gc.gridx = 1;
         gc.gridy = 0;
         add(enterTextLbl, gc);
@@ -138,8 +139,8 @@ class EncodeFrame extends JFrame {
         gc.fill = GridBagConstraints.NONE;
 
         //// Buttons ///////////////////////////////////////
-        gc.ipadx = 100;
-        gc.ipady = 50;
+        gc.ipadx = (int)Main.width/18;//100
+        gc.ipady = (int)Main.width/32;//50
         gc.weighty = 0.5;
 
         gc.anchor = GridBagConstraints.CENTER;
@@ -150,7 +151,7 @@ class EncodeFrame extends JFrame {
         JPanel encodePanel = new JPanel();
         encodePanel.add(keyLbl);
         encodePanel.add(keySpinner);
-        encodePanel.add(Box.createRigidArea(new Dimension(200,0)));
+        encodePanel.add(Box.createRigidArea(new Dimension((int)Main.width/9,0)));//200 0
         encodePanel.add(encode);
         encodePanel.add(clearBtn);
         add(encodePanel, gc);
@@ -163,7 +164,7 @@ class EncodeFrame extends JFrame {
         gc.gridy = 2;
         add(copy, gc);
 
-        gc.insets = new Insets(0,0,100,0);
+        gc.insets = new Insets(0,0,(int)Main.width/18,0);//0 0 100 0
         gc.anchor = GridBagConstraints.LAST_LINE_START;
         gc.gridx = 1;
         gc.gridy = 2;

@@ -12,9 +12,9 @@ class WelcomeFrame extends JFrame {
         GridBagConstraints gc = new GridBagConstraints();
 
         // fonts
-        Font titleFont = new Font("Times New Roman", Font.PLAIN, 100);
-        Font btnFont = new Font("Times New Roman", Font.PLAIN, 50);
-        Font creditFont = new Font("Times New Roman", Font.PLAIN, 12);
+        Font titleFont = new Font("Times New Roman", Font.PLAIN, (int)Main.width/18);//100
+        Font btnFont = new Font("Times New Roman", Font.PLAIN, (int)Main.width/32);//50
+        Font creditFont = new Font("Times New Roman", Font.PLAIN, (int)Main.width/100);//12
 
         // sizes
         //Dimension titleSize = new Dimension(2000,250);
@@ -23,10 +23,10 @@ class WelcomeFrame extends JFrame {
         JLabel imageEncoder = new JLabel("<html><center>WELCOME TO THE<p>SIMPLE TEXT ENCODER/DECODER</center></html>");
         imageEncoder.setFont(titleFont);
 
-        JButton encode = new JButton("Encode");
+        JButton encode = new JButton("ENCODE");
         encode.setFont(btnFont);
 
-        JButton decode = new JButton("Decode");
+        JButton decode = new JButton("DECODE");
         decode.setFont(btnFont);
 
         JLabel credit = new JLabel("Created by Trenton Lazorchak, Jake Howell, Jahlin Jean-Baptiste and Olanrewaju Arbisala.");
@@ -35,18 +35,18 @@ class WelcomeFrame extends JFrame {
 
         // add Swing components to the gui
         //// Title /////////////////////////////////////////
-        gc.anchor = GridBagConstraints.LAST_LINE_START;
+        gc.anchor = GridBagConstraints.CENTER;
         gc.weighty = 1.0;
         gc.weightx = 1.0;
-        gc.insets = new Insets(0,0,100,0);
+        gc.insets = new Insets(0,0,(int)Main.width/18,0);
 
         gc.gridx = 1;
         gc.gridy = 0;
         add(imageEncoder, gc);
 
         //// Buttons ///////////////////////////////////////
-        gc.ipadx = 200;
-        gc.ipady = 50;
+        gc.ipadx = (int)Main.width/9;//200
+        gc.ipady = (int)Main.width/32;//50
         gc.weightx = 1;
         gc.insets = new Insets(0,0,0,0);
 
