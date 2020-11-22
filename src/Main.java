@@ -1,13 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
-// set logger
 
 public class Main {
 
     // Sizes
     public static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     public static double width = screenSize.getWidth();
-    public static double height = screenSize.getHeight();
 
     public static void main(String[] args) {
 
